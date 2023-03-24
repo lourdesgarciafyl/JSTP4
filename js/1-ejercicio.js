@@ -2,22 +2,25 @@ let auto = {
     marca: `Peugeot`,
     color: `gris`,
     modelo: `RCZ 2023`,
+    patente: 5522,
     estaEncendido: false,
+    estaApagado: true,
     encender: function(){
-        this.estaEncendido = true;
+        document.write(`El auto está encendido`);
     },
     apagar: function(){
-       this.estaEncendido= false;
+        document.write(`El auto está apagado`);
     }
 }
 
-document.write(`<p>Este auto es marca ${auto.marca} modelo ${auto.modelo}. Es de color ${auto.color}. </p> <br>`);
+document.write(`<p>Este auto es marca ${auto.marca} modelo ${auto.modelo}. Es de color ${auto.color} y su patente es ${auto.patente}. </p> <br>`);
 document.write('Estado del auto: '+((auto.estaEncendido)?'Encendido':'Apagado'));
 
 //Encender
+document.write(`<h3>Encender el auto</h3>`)
 auto.encender();
-document.write('<br>Estado del auto: '+((auto.estaEncendido)?'Encendido':'Apagado'));
+
 
 //Apagar
+document.write(`<h3>Apagar el auto</h3>`)
 auto.apagar();
-document.write('<br>Estado del auto:' +((auto.estaEncendido)? 'Encendido':'Apagado'));
