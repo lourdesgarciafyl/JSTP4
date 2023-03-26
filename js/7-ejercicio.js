@@ -31,20 +31,21 @@ class Agenda{
     
     aniadirContacto(contacto){
         if(this.existeContacto(contacto)){
-            document.write(`El contacto ya existe.`)
+            console.log(`El contacto ya existe.`)
         }
         else{
             if(!this.agendaLlena()){
                 this.contactos.push(contacto);
-                this.listarContactos();
             }
         }        
     }
     
     listarContactos(){
-        for(i = 0; i< this.contactos.length; i++){
-            document.write(`Contacto: ${this.contactos[i].mostrarNombre}. Teléfono: ${this.contactos[i].mostrarTelefono} <br>`)
-        }
+        document.write(`<ul>`);
+        this.contactos.forEach((contacto) =>{
+            document.write(`<li>${this.contactos(contacto)}</li>`)
+        })
+        document.write(`</ul>`);
     }
     
     existeContacto(contacto){
@@ -52,14 +53,13 @@ class Agenda{
             (contactoExistente) => contactoExistente.nombre === contacto
         );
         if(existeContacto){
-            document.write(`El contacto ya existe.`);
+            console.log(`El contacto ya existe.`);
             return true;
         } else{
-            document.write(`El contacto no existe.`)
+            console.log(`El contacto no existe.`)
             return false;
         }
     }
-    
     
     buscarContacto(contacto){
         let encontrado = this.contactos.find(
@@ -80,14 +80,14 @@ class Agenda{
     }
     agendaLlena(){
         if(this.contactos.length == this.tamanio){
-            document.write(`Agenda llena`);
+            console.log(`Agenda llena`);
         }else{
-            document.write(`Hay lugar disponible en la agenda.`)
+            console.log(`Hay lugar disponible en la agenda.`)
         }
     }
     huecosLibres(){
         let espaciosDisponibles = this.tamanio - this.contactos.length;
-        document.write(`Hay lugar disponible para ${espaciosDisponibles} contacto/s en tu agenda.`)
+        console.log(`Hay lugar disponible para ${espaciosDisponibles} contacto/s en tu agenda.`)
     } 
 }
 
@@ -136,6 +136,6 @@ do{
             agendaNueva.tamanio = nuevoTamanio  
             break;
         default:
-            document.write(`Ingresa una opcion entre el 1 y el 8.`)                            
+            alert(`Ingresa una opcion entre el 1 y el 8.`);                            
     }
-} while (confirm(`¿Quiere realizar otra operación en su agenda?`))
+} while (confirm(`¿Quiere realizar otra operación?`))
