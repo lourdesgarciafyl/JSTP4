@@ -1,24 +1,38 @@
 class Cuenta{
+    #titular
+    #saldo
     constructor(nombreTitular){
-        this.titular = nombreTitular;
-        this.saldo = 0;
+        this.#titular = nombreTitular;
+        this.#saldo = 0;
+    }
+    get titular(){
+        return this.#titular
+    }
+    get saldo(){
+        return this.#saldo
+    }
+    set cambiarTitular(nuevoTitular){
+        if(nuevoTitular.length > 0){
+            this.#titular = nuevoTitular
+    }
     }
    ingresar(cantidad){
-    this.saldo += cantidad;
+    this.#saldo += cantidad;
     document.write(`Ingresaste $${cantidad} a tu cuenta.<br>`)
    } 
    extraer(cantidad){
-    if(cantidad <= this.saldo){
-        this.saldo-= cantidad;
-        document.write(`Extraíste $${cantidad} de tu cuenta.<br>`)
+    if(cantidad <= this.#saldo){
+        this.#saldo-= cantidad;
+        document.write(`Extrajiste $${cantidad} de tu cuenta.<br>`)
     } else{
         document.write(`No tenés suficiente dinero.<br>`)
     }
    }
    estadoDeCuenta(){
-    document.write(`<br>Nombre del titular de la cuenta: ${this.titular}. Saldo actual: $${this.saldo}.<br>`)
+    document.write(`<br>Nombre del titular de la cuenta: ${this.#titular}. Saldo actual: $${this.#saldo}.<br>`)
    }
 }
+
 
 // Cuenta de Alex
 const cuenta = new Cuenta(`Alex`);
