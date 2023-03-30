@@ -8,6 +8,48 @@ class Persona{
         this.altura = altura;
         this.anioDeNacimiento = anioDeNacimiento;
     }
+    get mostrarNombre(){
+        return this.nombre;
+    }
+    set cambiarNombre(nombreNuevo){
+        this.nombre = nombreNuevo;
+    }
+    get mostrarEdad(){
+        return this.edad;
+    }
+    set cambiarEdad(nuevaEdad){
+        this.edad = nuevaEdad;
+    }
+    get msotrarDni(){
+        return this.dni;
+    }
+    set cambiarDni(nuevoDni){
+        this.dni = nuevoDni;
+    }
+    get mostrarSexo(){
+        return this.sexo;
+    }
+    set cambiarSexo(nuevoSexo){
+        this.sexo = nuevoSexo;
+    }
+    get mostrarPeso(){
+        return this.peso;
+    }
+    set cambiarPeso(nuevoPeso){
+        this.peso = nuevoPeso;
+    }
+    get mostrarAltura(){
+        return this.altura;
+    }
+    set cambiarAltura(nuevaAltura){
+        this.altura = nuevaAltura;
+    }
+    get mostrarAnio(){
+        return this.anioDeNacimiento;
+    }
+    set cambiarAnio(nuevoAnio){
+        this.anioDeNacimiento = nuevoAnio;
+    }
     mostrarGeneracion(){
         if(this.anioDeNacimiento >= 1930 && this.anioDeNacimiento <= 1948){
             return `<ul>
