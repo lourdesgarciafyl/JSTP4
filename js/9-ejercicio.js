@@ -22,7 +22,7 @@ class Animal{
         }
     }
     emitirSonido(){
-        document.write(`Guau guau!`)
+        document.write(`A definir según cada animal!`)
     }
 }
 
@@ -30,16 +30,25 @@ class Perro extends Animal{
     constructor(nombre, edad){
         super(nombre, edad)
     }
+
+    emitirSonido(){
+        document.write(`<p>Guau, guau!</p>`)
+    }
 }
 
 class Gato extends Animal{
     constructor(nombre, edad){
         super(nombre, edad)
     }
+    emitirSonido(){
+        document.write(`<p>Miiiaaauuu, miiaauu!</p>`)
+    }
 }
 
 const firulais = new Perro(`Firulais`, 2);
-console.log(firulais.mostrarNombre);
+document.write(`<p>${firulais.mostrarNombre}</p>`);
+firulais.emitirSonido()
 
 const vengador = new Gato(`Vengador`, 4);
-console.log(vengador.mostrarEdad)
+document.write(`<p>${vengador.mostrarNombre}</p>`);
+vengador.emitirSonido()
