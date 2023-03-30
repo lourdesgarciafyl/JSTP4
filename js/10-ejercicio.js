@@ -86,7 +86,8 @@ let avion3 = new Avion(`Jazmin`, 500, `Roma`);
 aeropuerto1.agregarAvion(avion1.mostrarNombre);
 aeropuerto1.agregarAvion(avion2.mostrarNombre);
 aeropuerto1.agregarAvion(avion3.mostrarNombre);
-console.log(aeropuerto1.mostrarAviones);
+document.write(aeropuerto1.mostrarAviones);
+document.write(`<br>`);
 aeropuerto1.buscarAvion(`Jazmin`);
 
 console.log(avion1.abordar(`Juan Perez`))
@@ -94,4 +95,4 @@ console.log(avion1.abordar(`Mario Luis`))
 console.log(avion1.abordar(`Marcelo Tinelli`))
 console.log(avion1.abordar(`Lionel Messi`))
 console.log(avion1.abordar(`Lourdes Garcia`))
-console.log(avion1.pasajeros)
+document.write(avion1.mostrarPasajeros)
