@@ -1,32 +1,50 @@
 class Libro{
+    #isbn
+    #titulo
+    #autor
+    #nroPaginas
+    #anioPubli
+    #genero
     constructor(isbn, titulo, autor, nroPaginas, anioPubli, genero){
-        this.isbn = isbn;
-        this.titulo = titulo;
-        this.autor = autor;
-        this.nroPaginas = nroPaginas;
-        this.anioPubli = anioPubli;
-        this.genero = genero;
+        this.#isbn = isbn;
+        this.#titulo = titulo;
+        this.#autor = autor;
+        this.#nroPaginas = nroPaginas;
+        this.#anioPubli = anioPubli;
+        this.#genero = genero;
     }
     get mostrarIsbn(){
-        return this.isbn;
+        return this.#isbn;
+    }
+    set cambiarIsbn(nuevoIsbn){
+        this.#isbn = nuevoIsbn;
     }
     get mostrarTitulo(){
-        return this.titulo;
+        return this.#titulo;
+    }
+    set cambiarTitulo(nuevoTitulo){
+        this.#titulo = nuevoTitulo;
     }
     get mostrarAutor(){
-        return this.autor;
+        return this.#autor;
     }
     get mostrarCantPaginas(){
-        return this.nroPaginas;
+        return this.#nroPaginas;
     }
-    get anioPubli(){
-        return this.anioPubli;
+    set cambiarCantPaginas(nuevaCant){
+        this.#nroPaginas = nuevaCant;
+    }
+    get mostrarAnioPubli(){
+        return this.#anioPubli;
     }
     get mostrarGenero(){
-        return this.genero;
+        return this.#genero;
+    }
+    set cambiarGenero(nuevoGenero){
+        this.#genero = nuevoGenero;
     }
     mostrarLibro(){
-        return `<p>El libro ${this.titulo} con ISBN ${this.isbn}, escrito por el autor ${this.autor}, tiene ${this.nroPaginas} páginas. Fue publicado en el año ${this.anioPubli} y es del género ${this.genero}.</p>`
+        return `<p>El libro ${this.mostrarTitulo} con ISBN ${this.mostrarIsbn}, escrito por el autor ${this.mostrarAutor}, tiene ${this.mostrarCantPaginas} páginas. Fue publicado en el año ${this.mostrarAnioPubli} y es del género ${this.mostrarGenero}.</p>`
     }
 }
 

@@ -15,10 +15,10 @@ class Rectangulo{
     get mostrarAlto(){
         return this.altura;
     }
-    get perimetro(){
+    perimetro(){
         return (this.ancho+this.altura)*2;
     }
-    get area(){
+    area(){
         return this.ancho*this.altura;
     }
     informacion(){

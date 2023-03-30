@@ -4,16 +4,25 @@ class Persona{
         this.edad = edad;
         this.profesion = profesion;
     }
+    get mostrarNombre(){
+        return this.nombre;
+    }
+    get mostrarEdad(){
+        return this.edad;
+    }
+    get mostrarProfesion(){
+        return this.profesion
+    }
     saludar(){
-        return `Hola! Soy ${this.nombre}, tengo ${this.edad} años y mi profesión es ${this.profesion}.<br>`
+        document.write(`Hola! Soy ${this.mostrarNombre}, tengo ${this.mostrarEdad} años y mi profesión es ${this.mostrarProfesion}.<br>`);
     }
     despedirse(){
-        return `Adiós!. Que te vaya bien. <br>`
+        document.write(`Adiós!. Que te vaya bien. <br>`);
     }
 }
 const persona1 = new Persona(`Mariana Enriquez`, 58, `escritora`);
 const persona2 = new Persona(`Carlos Busqued`, 41, `investigador`);
-document.write(persona1.saludar());
-document.write(persona2.saludar());
-document.write(persona1.despedirse());
-document.write(persona2.despedirse());
+persona1.saludar();
+persona2.saludar();
+persona1.despedirse();
+persona2.despedirse();
